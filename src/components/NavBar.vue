@@ -10,7 +10,6 @@
       <img style="width: 100px" src="/amine96.png" alt="Logo" />
     </el-menu-item>
     <el-menu-item index="/">Home</el-menu-item>
-    <el-menu-item index="/skills">Skills</el-menu-item>
     <el-menu-item index="/projects">Projects</el-menu-item>
     <el-menu-item index="/contact">Contact</el-menu-item>
   </el-menu>
