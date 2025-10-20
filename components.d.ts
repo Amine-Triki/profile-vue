@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
+    AppHeading: typeof import('./src/components/AppHeading.vue')['default']
     AppLayout: typeof import('./src/components/AppLayout.vue')['default']
     IAntDesignGithubFilled: typeof import('~icons/ant-design/github-filled')['default']
     IRiFacebookBoxFill: typeof import('~icons/ri/facebook-box-fill')['default']

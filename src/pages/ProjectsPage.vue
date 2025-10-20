@@ -44,15 +44,13 @@ const filteredProjects = computed(() => {
   }
   return projects.value.filter((project) => project.category === activeCategory.value)
 })
+import Heading from '@/components/AppHeading.vue'
 </script>
 
 <template>
   <main class="main-container">
     <div class="container">
-      <div class="header">
-        <h2 class="title">My Projects</h2>
-        <p class="subtitle">What I build</p>
-      </div>
+      <Heading title="My Projects" subTitle="What I build" />
 
       <div v-if="loading" class="loading-container">
         <el-icon class="is-loading" :size="40">
