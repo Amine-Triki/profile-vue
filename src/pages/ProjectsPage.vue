@@ -23,6 +23,7 @@ const categories = [
   { key: 'React', label: 'React' },
   { key: 'NextJs', label: 'NextJs' },
   { key: 'vue', label: 'vue' },
+  { key: 'Astro', label: 'Astro' },
 ]
 
 onMounted(async () => {
