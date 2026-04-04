@@ -1,5 +1,24 @@
 <script setup lang="ts">
 import 'animate.css'
+import { ref, onMounted } from 'vue'
+
+type CvResponse = {
+  cv: {
+    en: {
+      download: string
+      preview: string
+    }
+  }
+}
+
+const cvData = ref<CvResponse | null>(null)
+
+onMounted(async () => {
+  const res = await fetch(
+    'https://raw.githubusercontent.com/Amine-Triki/projects-data/main/cv.json',
+  )
+  cvData.value = (await res.json()) as CvResponse
+})
 </script>
 
 <template>
@@ -13,12 +32,14 @@ import 'animate.css'
         practices. I use HTML, CSS, JavaScript (React); I am a WordPress designer.
       </p>
 
-      <a
-        href="https://mega.nz/file/WIciFbZK#giPo5Q3uIrClf12Truz60TxZoW6vnC6sTZyXNA9QbKk"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><el-button type="warning" plain>Download Resume</el-button>
-      </a>
+      <div class="action-buttons">
+        <a :href="cvData?.cv.en.download" target="_blank" rel="noopener noreferrer">
+          <el-button type="warning" class="action-btn">⬇️ Download Resume</el-button>
+        </a>
+        <a :href="cvData?.cv.en.preview" target="_blank" rel="noopener noreferrer">
+          <el-button type="primary" class="action-btn" plain>👁️ Preview</el-button>
+        </a>
+      </div>
       <div class="social-icons">
         <a
           href="https://github.com/Amine-Triki"
@@ -80,6 +101,19 @@ import 'animate.css'
     width: 350px;
   }
 }
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.action-btn {
+  min-width: 170px;
+}
+
 .social-icons {
   display: flex;
   gap: 1rem;
