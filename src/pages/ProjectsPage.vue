@@ -18,8 +18,6 @@ const loading = ref(true)
 
 const categories = [
   { key: 'all', label: 'All works' },
-  { key: 'JavaScript', label: 'JavaScript' },
-  { key: 'Wordpress', label: 'Wordpress' },
   { key: 'React', label: 'React' },
   { key: 'NextJs', label: 'NextJs' },
   { key: 'vue', label: 'vue' },
