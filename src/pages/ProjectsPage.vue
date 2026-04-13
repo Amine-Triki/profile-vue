@@ -20,6 +20,7 @@ const categories = [
   { key: 'all', label: 'All works' },
   { key: 'React', label: 'React' },
   { key: 'NextJs', label: 'NextJs' },
+  { key: 'MERN', label: 'MERN' },
   { key: 'vue', label: 'vue' },
   { key: 'Astro', label: 'Astro' },
 ]
